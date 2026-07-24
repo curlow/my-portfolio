@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Скворцов Владимир — Разработчик & Дизайнер</title>
+    <meta name="description" content="Фронтенд-разработчик и UI/UX дизайнер. Создаю веб-приложения и интерфейсы." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="container navbar__inner">
+        <a href="#hero" class="navbar__logo">SV</a>
+        <ul class="navbar__items" id="nav-menu">
+          <li><a href="#hero" class="navbar__link">Главная</a></li>
+          <li><a href="#about" class="navbar__link">Обо мне</a></li>
+          <li><a href="#projects" class="navbar__link">Проекты</a></li>
+          <li><a href="#pricing" class="navbar__link">Услуги</a></li>
+          <li><a href="#contact" class="navbar__link">Контакт</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <button class="theme-toggle" id="theme-btn" aria-label="Переключить тему">
+            <span class="theme-toggle__icon">☀</span>
+          </button>
+          <button class="navbar__burger" id="burger-btn" aria-label="Меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main">
+
+      <!-- HERO -->
+      <section id="hero" class="hero">
+        <div class="container hero__container">
+          <div class="hero__img-wrapper">
+            <div class="hero__img">
+              <img src="avatar.jpg" alt="Скворцов Владимир" />
+            </div>
+          </div>
+          <div class="hero__content">
+            <div class="hero__badge">
+              <span class="hero__badge-dot"></span>
+              Открыт к сотрудничеству
+            </div>
+            <h1 class="hero__title">
+              Скворцов Владимир<br />
+              <span>Разработчик & Дизайнер</span>
+            </h1>
+            <p class="hero__about">
+              Создаю цифровые продукты на стыке разработки и дизайна.
+              Превращаю сложные задачи в элегантные, удобные интерфейсы.
+            </p>
+            <div class="hero__actions">
+              <a href="#pricing" class="btn btn--primary">Услуги и цены</a>
+              <a href="#projects" class="btn btn--secondary">Смотреть проекты</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__label">Экспертиза</span>
+            <h2 class="section__title">Два навыка — одно видение</h2>
+            <p class="section__subtitle">
+              Уникальная ценность: глубокое понимание и разработки, и дизайна
+              позволяет создавать продукты без компромиссов.
+            </p>
+          </div>
+
+          <div class="about__grid">
+            <div class="about__card">
+              <div class="about__card-number">01</div>
+              <h3 class="about__card-title">Фронтенд-разработка</h3>
+              <p class="about__card-text">
+                Современные технологии, чистый код, адаптивная вёрстка.
+                От прототипа до production-ready решения — всё работает
+                быстро, кроссбраузерно и масштабируемо.
+              </p>
+            </div>
+
+            <div class="about__card">
+              <div class="about__card-number">02</div>
+              <h3 class="about__card-title">UI/UX Дизайн</h3>
+              <p class="about__card-text">
+                Исследование, прототипирование, визуальный язык.
+                Создаю интерфейсы, которые не просто выглядят хорошо —
+                они интуитивны и решают реальные проблемы пользователей.
+              </p>
+            </div>
+
+            <div class="about__card">
+              <div class="about__card-number">03</div>
+              <h3 class="about__card-title">Полный цикл</h3>
+              <p class="about__card-text">
+                От идеи и макета до кода и запуска. Единая точка ответственности.
+                Никаких потерь в коммуникации между дизайнером и разработчиком —
+                это один человек.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section section--alt">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__label">Избранные работы</span>
+            <h2 class="section__title">Проекты</h2>
+          </div>
+
+          <div class="projects__list">
+
+            <div class="project">
+              <div class="project__img-wrapper">
+                <img src="project1.webp" alt="Cars" class="project__img" />
+                <a href="https://curlow.github.io/cars/" class="project__link" target="_blank">Открыть</a>
+              </div>
+              <div class="project__info">
+                <h3 class="project__title">Cars</h3>
+                <p class="project__description">
+                  Современный веб-сайт автосалона с удобным каталогом и
+                  возможностью подбора автомобилей. Фильтрация по параметрам,
+                  подробные характеристики, онлайн-заявка на покупку или тест-драйв.
+                </p>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project__img-wrapper">
+                <span class="project__badge">В разработке</span>
+                <img src="project2.webp" alt="Proriv" class="project__img" />
+                <a href="https://curlow.github.io/proriv/" class="project__link" target="_blank">Открыть</a>
+              </div>
+              <div class="project__info">
+                <h3 class="project__title">Proriv</h3>
+                <p class="project__description">
+                  Корпоративный сайт компании, предоставляющей услуги
+                  фотоуслуг и копицентра. Портфолио, каталог услуг,
+                  форма обратной связи и консультации.
+                </p>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project__img-wrapper">
+                <span class="project__badge project__badge--dark">В разработке</span>
+                <img src="project3.webp" alt="Coffee Travel" class="project__img" />
+                <a href="#" class="project__link" target="_blank">Открыть</a>
+              </div>
+              <div class="project__info">
+                <h3 class="project__title">Coffee Travel</h3>
+                <p class="project__description">
+                  Веб-сайт кофейни с каталогом напитков, специальными
+                  предложениями, онлайн-заказом и информацией о
+                  местоположении. Удобный интерфейс для выбора и оформления.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" class="section">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__label">Услуги</span>
+            <h2 class="section__title">Прайс-лист</h2>
+            <p class="section__subtitle">
+              Честные цены без скрытых платежей.
+              Первый проект — скидка 15% для новых клиентов.
+            </p>
+          </div>
+
+          <div class="pricing__grid">
+
+            <!-- Лендинг -->
+            <div class="pricing-card">
+              <div class="pricing-card__label">Базовый</div>
+              <h3 class="pricing-card__title">Лендинг</h3>
+              <div class="pricing-card__price">10 000 <span>руб.</span></div>
+              <p class="pricing-card__note">от 3 рабочих дней</p>
+              <div class="pricing-card__divider"></div>
+              <ul class="pricing-card__features">
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Дизайн-макет (Figma)
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Адаптивная вёрстка
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Базовая SEO-оптимизация
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  До 3 экранов
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  1 раунд правок
+                </li>
+              </ul>
+              <a href="#contact" class="pricing-card__cta pricing-card__cta--secondary">Заказать</a>
+            </div>
+
+            <!-- Многостраничный сайт -->
+            <div class="pricing-card pricing-card--featured">
+              <div class="pricing-card__label">Популярное</div>
+              <h3 class="pricing-card__title">Сайт-визитка / Корпоративный</h3>
+              <div class="pricing-card__price">25 000 <span>руб.</span></div>
+              <p class="pricing-card__note">от 7 рабочих дней</p>
+              <div class="pricing-card__divider"></div>
+              <ul class="pricing-card__features">
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  До 5 страниц
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Индивидуальный дизайн (Figma)
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Адаптив + анимации
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Форма обратной связи
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  SEO-оптимизация
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  2 раунда правок
+                </li>
+              </ul>
+              <a href="#contact" class="pricing-card__cta pricing-card__cta--primary">Заказать</a>
+            </div>
+
+            <!-- UI/UX Дизайн -->
+            <div class="pricing-card">
+              <div class="pricing-card__label">Дизайн</div>
+              <h3 class="pricing-card__title">UI/UX Дизайн</h3>
+              <div class="pricing-card__price">15 000 <span>руб.</span></div>
+              <p class="pricing-card__note">от 5 рабочих дней</p>
+              <div class="pricing-card__divider"></div>
+              <ul class="pricing-card__features">
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Wireframes и структура
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Визуальный дизайн (Figma)
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Интерактивный прототип
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  До 5 экранов
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  2 раунда правок
+                </li>
+              </ul>
+              <a href="#contact" class="pricing-card__cta pricing-card__cta--secondary">Заказать</a>
+            </div>
+
+            <!-- Поддержка -->
+            <div class="pricing-card">
+              <div class="pricing-card__label">Партнёрство</div>
+              <h3 class="pricing-card__title">Поддержка проекта</h3>
+              <div class="pricing-card__price">8 000 <span>руб./мес</span></div>
+              <p class="pricing-card__note">подписка, отмена в любой момент</p>
+              <div class="pricing-card__divider"></div>
+              <ul class="pricing-card__features">
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  До 10 часов работы в месяц
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Исправление багов
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Мелкие доработки
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Консультации
+                </li>
+                <li class="pricing-card__feature">
+                  <span class="pricing-card__check">✓</span>
+                  Отчёт по работе
+                </li>
+              </ul>
+              <a href="#contact" class="pricing-card__cta pricing-card__cta--secondary">Заказать</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section section--alt">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__label">Связаться</span>
+            <h2 class="section__title">Давайте обсудим проект</h2>
+          </div>
+
+          <div class="contact__wrapper">
+            <p class="contact__text">
+              Расскажите о вашей задаче — я отвечу в течение 24 часов.
+              Первая консультация всегда бесплатна.
+            </p>
+            <div class="contact__links">
+              <a href="https://t.me/curlow853" class="contact__link" target="_blank">
+                <span class="contact__link-icon">TG</span>
+                Telegram
+              </a>
+              <a href="https://vk.com/curlow595" class="contact__link" target="_blank">
+                <span class="contact__link-icon">VK</span>
+                ВКонтакте
+              </a>
+              <a href="https://github.com/curlow" class="contact__link" target="_blank">
+                <span class="contact__link-icon">GH</span>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer__container">
+        <p class="footer__copy">
+          &copy; 2026 Скворцов Владимир. Все права защищены.
+          <a href="oferta.html">Публичная оферта</a>
+        </p>
+        <div class="footer__nav">
+          <a href="#hero" class="footer__link">Главная</a>
+          <a href="#projects" class="footer__link">Проекты</a>
+          <a href="#pricing" class="footer__link">Услуги</a>
+          <a href="#contact" class="footer__link">Контакт</a>
+        </div>
+        <div class="footer__socials">
+          <a href="https://t.me/curlow853" class="footer__social" target="_blank" aria-label="Telegram">TG</a>
+          <a href="https://github.com/curlow" class="footer__social" target="_blank" aria-label="GitHub">GH</a>
+          <a href="https://vk.com/curlow595" class="footer__social" target="_blank" aria-label="VK">VK</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        /* --- Burger menu --- */
+        var burger = document.getElementById('burger-btn');
+        var menu = document.getElementById('nav-menu');
+        var navbar = document.querySelector('.navbar');
+        var links = menu.querySelectorAll('.navbar__link');
+
+        function lockScroll() {
+          var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+          document.documentElement.style.setProperty('--scrollbar-width', scrollbarWidth + 'px');
+          document.body.classList.add('no-scroll');
+        }
+
+        function unlockScroll() {
+          document.body.classList.remove('no-scroll');
+          document.documentElement.style.removeProperty('--scrollbar-width');
+        }
+
+        burger.addEventListener('click', function () {
+          var isOpen = menu.classList.toggle('is-open');
+          navbar.classList.toggle('is-open');
+          burger.classList.toggle('is-active');
+          burger.setAttribute('aria-expanded', isOpen);
+          isOpen ? lockScroll() : unlockScroll();
+        });
+
+        links.forEach(function (link) {
+          link.addEventListener('click', function () {
+            menu.classList.remove('is-open');
+            navbar.classList.remove('is-open');
+            burger.classList.remove('is-active');
+            burger.setAttribute('aria-expanded', 'false');
+            unlockScroll();
+          });
+        });
+
+        /* --- Theme toggle --- */
+        var themeBtn = document.getElementById('theme-btn');
+        var themeIcon = themeBtn.querySelector('.theme-toggle__icon');
+        var root = document.documentElement;
+
+        function getTheme() {
+          return root.getAttribute('data-theme') || 'light';
+        }
+
+        function applyIcon(theme) {
+          themeIcon.textContent = theme === 'dark' ? '☾' : '☀';
+        }
+
+        applyIcon(getTheme());
+
+        themeBtn.addEventListener('click', function () {
+          var next = getTheme() === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          applyIcon(next);
+        });
+      })();
+    </script>
+  </body>
+</html>
