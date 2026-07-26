@@ -571,7 +571,7 @@
           });
         });
 
-        /* --- Contact form → Web3Forms (email) + Worker (Telegram) --- */
+        /* --- Contact form → Telegram via Worker --- */
         var contactForm = document.getElementById('contact-form');
         var workerUrl = 'https://green-feather-21c8.zxcred150.workers.dev/';
 
@@ -588,29 +588,14 @@
           btn.textContent = 'Отправка...';
           btn.disabled = true;
 
-          var payload = {
-            access_key: '32761236-cb6c-4d9c-86bc-70e4a9db9db2',
-            name: name,
-            contact: contact,
-            message: message,
-            subject: 'Новая заявка с портфолио'
-          };
-
-          Promise.all([
-            fetch('https://api.web3forms.com/submit', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-              body: JSON.stringify(payload)
-            }).then(function (r) { return r.json(); }),
-            fetch(workerUrl, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ name: name, contact: contact, message: message })
-            }).catch(function () {})
-          ])
-          .then(function (results) {
-            var emailOk = results[0] && results[0].success;
-            if (emailOk) {
+          fetch(workerUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: name, contact: contact, message: message })
+          })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data.ok) {
               btn.textContent = 'Отправлено ✓';
               btn.style.background = '#22c55e';
               contactForm.reset();
