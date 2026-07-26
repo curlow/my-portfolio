@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ПРОРЫВ — Скворцов Владимир</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="container navbar__inner">
+        <a href="index.html" class="navbar__logo">SV</a>
+        <ul class="navbar__items">
+          <li><a href="index.html" class="navbar__link">На главную</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <button class="theme-toggle" id="theme-btn" aria-label="Переключить тему">
+            <span class="theme-toggle__icon">☀</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main">
+      <section class="project-page">
+        <div class="container project-page__container">
+
+          <a href="index.html#projects" class="project-page__back">← Назад к проектам</a>
+
+          <div class="project-page__header">
+            <span class="project-page__badge project-page__badge--ready">Готовый проект</span>
+            <h1 class="project-page__title">ПРОРЫВ</h1>
+            <p class="project-page__subtitle">Сайт для типографии в Тихвине</p>
+          </div>
+
+          <div class="project-page__preview">
+            <img src="project2.webp" alt="ПРОРЫВ" class="project-page__img" />
+          </div>
+
+          <div class="project-page__info">
+            <div class="project-page__block">
+              <h3 class="project-page__label">О проекте</h3>
+              <p class="project-page__text">
+                Сайт для типографии «ПРОРЫВ» в Тихвине. Полный цикл: дизайн + разработка.
+                Каталог услуг, онлайн-заявка, карты водителя для тахографов,
+                интеграция с Яндекс Картами.
+              </p>
+            </div>
+
+            <div class="project-page__block">
+              <h3 class="project-page__label">Что реализовано</h3>
+              <ul class="project-page__list">
+                <li>Адаптивный дизайн для всех устройств</li>
+                <li>Каталог услуг с каруселью</li>
+                <li>Раздел «Карты водителя» с описанием двух типов</li>
+                <li>Форма обратной связи и онлайн-заявка</li>
+                <li>Интеграция Яндекс Карт с меткой офиса</li>
+                <li>Шапка с быстрыми действиями (печать, звонок)</li>
+              </ul>
+            </div>
+
+            <div class="project-page__block">
+              <h3 class="project-page__label">Технологии</h3>
+              <div class="project-page__tags">
+                <span class="project-page__tag">HTML</span>
+                <span class="project-page__tag">CSS</span>
+                <span class="project-page__tag">JavaScript</span>
+                <span class="project-page__tag">Яндекс Карты</span>
+              </div>
+            </div>
+
+            <div class="project-page__block">
+              <h3 class="project-page__label">Ссылки</h3>
+              <div class="project-page__links">
+                <a href="https://прорыв.втихвине.рф" class="btn btn--primary" target="_blank">Открыть сайт</a>
+                <a href="index.html#projects" class="btn btn--secondary">Другие проекты</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__container">
+        <p class="footer__copy">&copy; 2026 Скворцов Владимир. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var themeBtn = document.getElementById('theme-btn');
+        var themeIcon = themeBtn.querySelector('.theme-toggle__icon');
+        var root = document.documentElement;
+        function getTheme() { return root.getAttribute('data-theme') || 'light'; }
+        function applyIcon(theme) { themeIcon.textContent = theme === 'dark' ? '☾' : '☀'; }
+        applyIcon(getTheme());
+        themeBtn.addEventListener('click', function () {
+          var next = getTheme() === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          applyIcon(next);
+        });
+      })();
+    </script>
+  </body>
+</html>
