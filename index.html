@@ -25,9 +25,9 @@
         <a href="#hero" class="navbar__logo">SV</a>
         <ul class="navbar__items" id="nav-menu">
           <li><a href="#hero" class="navbar__link">Главная</a></li>
+          <li><a href="#pricing" class="navbar__link">Услуги</a></li>
           <li><a href="#about" class="navbar__link">Обо мне</a></li>
           <li><a href="#projects" class="navbar__link">Проекты</a></li>
-          <li><a href="#pricing" class="navbar__link">Услуги</a></li>
           <li><a href="#contact" class="navbar__link">Контакт</a></li>
         </ul>
         <div class="navbar__actions">
@@ -74,117 +74,11 @@
         </div>
       </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="section">
-        <div class="container">
-          <div class="section__header">
-            <span class="section__label">Экспертиза</span>
-            <h2 class="section__title">Два навыка — одно видение</h2>
-            <p class="section__subtitle">
-              Уникальная ценность: глубокое понимание и разработки, и дизайна
-              позволяет создавать продукты без компромиссов.
-            </p>
-          </div>
-
-          <div class="about__grid">
-            <div class="about__card">
-              <div class="about__card-number">01</div>
-              <h3 class="about__card-title">Фронтенд-разработка</h3>
-              <p class="about__card-text">
-                Современные технологии, чистый код, адаптивная вёрстка.
-                От прототипа до production-ready решения — всё работает
-                быстро, кроссбраузерно и масштабируемо.
-              </p>
-            </div>
-
-            <div class="about__card">
-              <div class="about__card-number">02</div>
-              <h3 class="about__card-title">UI/UX Дизайн</h3>
-              <p class="about__card-text">
-                Исследование, прототипирование, визуальный язык.
-                Создаю интерфейсы, которые не просто выглядят хорошо —
-                они интуитивны и решают реальные проблемы пользователей.
-              </p>
-            </div>
-
-            <div class="about__card">
-              <div class="about__card-number">03</div>
-              <h3 class="about__card-title">Полный цикл</h3>
-              <p class="about__card-text">
-                От идеи и макета до кода и запуска. Единая точка ответственности.
-                Никаких потерь в коммуникации между дизайнером и разработчиком —
-                это один человек.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects" class="section section--alt">
-        <div class="container">
-          <div class="section__header">
-            <span class="section__label">Избранные работы</span>
-            <h2 class="section__title">Проекты</h2>
-          </div>
-
-          <div class="projects__list">
-
-            <div class="project">
-              <div class="project__img-wrapper">
-                <img src="project1.webp" alt="Cars" class="project__img" />
-                <a href="https://curlow.github.io/cars/" class="project__link" target="_blank">Открыть</a>
-              </div>
-              <div class="project__info">
-                <h3 class="project__title">Cars</h3>
-                <p class="project__description">
-                  Современный веб-сайт автосалона с удобным каталогом и
-                  возможностью подбора автомобилей. Фильтрация по параметрам,
-                  подробные характеристики, онлайн-заявка на покупку или тест-драйв.
-                </p>
-              </div>
-            </div>
-
-            <div class="project">
-              <div class="project__img-wrapper">
-                <span class="project__badge">В разработке</span>
-                <img src="project2.webp" alt="Proriv" class="project__img" />
-                <a href="https://curlow.github.io/proriv/" class="project__link" target="_blank">Открыть</a>
-              </div>
-              <div class="project__info">
-                <h3 class="project__title">Proriv</h3>
-                <p class="project__description">
-                  Корпоративный сайт компании, предоставляющей услуги
-                  фотоуслуг и копицентра. Портфолио, каталог услуг,
-                  форма обратной связи и консультации.
-                </p>
-              </div>
-            </div>
-
-            <div class="project">
-              <div class="project__img-wrapper">
-                <span class="project__badge project__badge--dark">В разработке</span>
-                <img src="project3.webp" alt="Coffee Travel" class="project__img" />
-                <a href="#" class="project__link" target="_blank">Открыть</a>
-              </div>
-              <div class="project__info">
-                <h3 class="project__title">Coffee Travel</h3>
-                <p class="project__description">
-                  Веб-сайт кофейни с каталогом напитков, специальными
-                  предложениями, онлайн-заказом и информацией о
-                  местоположении. Удобный интерфейс для выбора и оформления.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- PRICING -->
+      <!-- PRICING (moved after hero) -->
       <section id="pricing" class="section">
         <div class="container">
           <div class="section__header">
+            <div class="section__icon">◆</div>
             <span class="section__label">Услуги</span>
             <h2 class="section__title">Прайс-лист</h2>
             <p class="section__subtitle">
@@ -331,10 +225,120 @@
         </div>
       </section>
 
+      <!-- ABOUT -->
+      <section id="about" class="section section--alt">
+        <div class="container">
+          <div class="section__header">
+            <div class="section__icon">◈</div>
+            <span class="section__label">Экспертиза</span>
+            <h2 class="section__title">Два навыка — одно видение</h2>
+            <p class="section__subtitle">
+              Уникальная ценность: глубокое понимание и разработки, и дизайна
+              позволяет создавать продукты без компромиссов.
+            </p>
+          </div>
+
+          <div class="about__grid">
+            <div class="about__card">
+              <div class="about__card-number">01</div>
+              <h3 class="about__card-title">Фронтенд-разработка</h3>
+              <p class="about__card-text">
+                Современные технологии, чистый код, адаптивная вёрстка.
+                От прототипа до production-ready решения — всё работает
+                быстро, кроссбраузерно и масштабируемо.
+              </p>
+            </div>
+
+            <div class="about__card">
+              <div class="about__card-number">02</div>
+              <h3 class="about__card-title">UI/UX Дизайн</h3>
+              <p class="about__card-text">
+                Исследование, прототипирование, визуальный язык.
+                Создаю интерфейсы, которые не просто выглядят хорошо —
+                они интуитивны и решают реальные проблемы пользователей.
+              </p>
+            </div>
+
+            <div class="about__card">
+              <div class="about__card-number">03</div>
+              <h3 class="about__card-title">Полный цикл</h3>
+              <p class="about__card-text">
+                От идеи и макета до кода и запуска. Единая точка ответственности.
+                Никаких потерь в коммуникации между дизайнером и разработчиком —
+                это один человек.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section__header">
+            <div class="section__icon">▣</div>
+            <span class="section__label">Избранные работы</span>
+            <h2 class="section__title">Проекты</h2>
+          </div>
+
+          <div class="projects__list">
+
+            <div class="project">
+              <div class="project__img-wrapper">
+                <img src="project1.webp" alt="Cars" class="project__img" />
+                <a href="https://curlow.github.io/cars/" class="project__link" target="_blank">Открыть</a>
+              </div>
+              <div class="project__info">
+                <h3 class="project__title">Cars</h3>
+                <p class="project__description">
+                  Современный веб-сайт автосалона с удобным каталогом и
+                  возможностью подбора автомобилей. Фильтрация по параметрам,
+                  подробные характеристики, онлайн-заявка на покупку или тест-драйв.
+                </p>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project__img-wrapper">
+                <span class="project__badge">В разработке</span>
+                <img src="project2.webp" alt="Proriv" class="project__img" />
+                <a href="https://curlow.github.io/proriv/" class="project__link" target="_blank">Открыть</a>
+              </div>
+              <div class="project__info">
+                <h3 class="project__title">Proriv</h3>
+                <p class="project__description">
+                  Корпоративный сайт компании, предоставляющей услуги
+                  фотоуслуг и копицентра. Портфолио, каталог услуг,
+                  форма обратной связи и консультации.
+                </p>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project__img-wrapper">
+                <span class="project__badge project__badge--dark">В разработке</span>
+                <img src="project3.webp" alt="Coffee Travel" class="project__img" />
+                <a href="#" class="project__link" target="_blank">Открыть</a>
+              </div>
+              <div class="project__info">
+                <h3 class="project__title">Coffee Travel</h3>
+                <p class="project__description">
+                  Веб-сайт кофейни с каталогом напитков, специальными
+                  предложениями, онлайн-заказом и информацией о
+                  местоположении. Удобный интерфейс для выбора и оформления.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <!-- CONTACT -->
       <section id="contact" class="section section--alt">
         <div class="container">
           <div class="section__header">
+            <div class="section__icon">✉</div>
             <span class="section__label">Связаться</span>
             <h2 class="section__title">Давайте обсудим проект</h2>
           </div>
@@ -384,6 +388,30 @@
         </div>
       </div>
     </footer>
+
+    <!-- BOTTOM NAV (mobile) -->
+    <nav class="bottom-nav" id="bottom-nav">
+      <a href="#hero" class="bottom-nav__item is-active" data-section="hero">
+        <span class="bottom-nav__icon">⌂</span>
+        <span class="bottom-nav__label">Главная</span>
+      </a>
+      <a href="#pricing" class="bottom-nav__item" data-section="pricing">
+        <span class="bottom-nav__icon">◆</span>
+        <span class="bottom-nav__label">Услуги</span>
+      </a>
+      <a href="#about" class="bottom-nav__item" data-section="about">
+        <span class="bottom-nav__icon">◈</span>
+        <span class="bottom-nav__label">Обо мне</span>
+      </a>
+      <a href="#projects" class="bottom-nav__item" data-section="projects">
+        <span class="bottom-nav__icon">▣</span>
+        <span class="bottom-nav__label">Проекты</span>
+      </a>
+      <a href="#contact" class="bottom-nav__item" data-section="contact">
+        <span class="bottom-nav__icon">✉</span>
+        <span class="bottom-nav__label">Контакт</span>
+      </a>
+    </nav>
 
     <button class="scroll-top" id="scroll-top-btn" aria-label="Наверх">↑</button>
 
@@ -455,6 +483,38 @@
 
         scrollTopBtn.addEventListener('click', function () {
           window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        /* --- Bottom nav active state --- */
+        var bottomNav = document.getElementById('bottom-nav');
+        var bottomNavItems = bottomNav.querySelectorAll('.bottom-nav__item');
+        var sectionIds = ['hero', 'pricing', 'about', 'projects', 'contact'];
+
+        function updateBottomNav() {
+          var scrollPos = window.scrollY + 200;
+          var current = 'hero';
+          for (var i = 0; i < sectionIds.length; i++) {
+            var el = document.getElementById(sectionIds[i]);
+            if (el && el.offsetTop <= scrollPos) {
+              current = sectionIds[i];
+            }
+          }
+          bottomNavItems.forEach(function (item) {
+            item.classList.toggle('is-active', item.getAttribute('data-section') === current);
+          });
+        }
+
+        window.addEventListener('scroll', updateBottomNav);
+        updateBottomNav();
+
+        bottomNavItems.forEach(function (item) {
+          item.addEventListener('click', function (e) {
+            e.preventDefault();
+            var target = document.getElementById(item.getAttribute('data-section'));
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
         });
       })();
     </script>
