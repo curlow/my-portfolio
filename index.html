@@ -281,9 +281,15 @@
             <h2 class="section__title">Проекты</h2>
           </div>
 
+          <div class="projects__filters">
+            <button class="projects__filter is-active" data-filter="all">Все</button>
+            <button class="projects__filter" data-filter="test">Тесты</button>
+            <button class="projects__filter" data-filter="dev">В разработке</button>
+          </div>
+
           <div class="projects__list">
 
-            <div class="project">
+            <div class="project" data-category="test">
               <div class="project__img-wrapper">
                 <img src="project1.webp" alt="Cars" class="project__img" />
                 <a href="https://curlow.github.io/cars/" class="project__link" target="_blank">Открыть</a>
@@ -298,7 +304,7 @@
               </div>
             </div>
 
-            <div class="project">
+            <div class="project" data-category="dev">
               <div class="project__img-wrapper">
                 <span class="project__badge">В разработке</span>
                 <img src="project2.webp" alt="Proriv" class="project__img" />
@@ -314,7 +320,7 @@
               </div>
             </div>
 
-            <div class="project">
+            <div class="project" data-category="dev">
               <div class="project__img-wrapper">
                 <span class="project__badge project__badge--dark">В разработке</span>
                 <img src="project3.webp" alt="Coffee Travel" class="project__img" />
@@ -470,6 +476,37 @@
           root.setAttribute('data-theme', next);
           localStorage.setItem('theme', next);
           applyIcon(next);
+        });
+
+        /* --- Project filters --- */
+        var filterBtns = document.querySelectorAll('.projects__filter');
+        var projects = document.querySelectorAll('.project');
+
+        filterBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+
+            var filter = btn.getAttribute('data-filter');
+            projects.forEach(function (p) {
+              if (filter === 'all' || p.getAttribute('data-category') === filter) {
+                p.style.display = '';
+                p.style.opacity = '0';
+                p.style.transform = 'translateY(16px)';
+                requestAnimationFrame(function () {
+                  requestAnimationFrame(function () {
+                    p.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                    p.style.opacity = '1';
+                    p.style.transform = 'translateY(0)';
+                  });
+                });
+              } else {
+                p.style.opacity = '0';
+                p.style.transform = 'translateY(16px)';
+                setTimeout(function () { p.style.display = 'none'; }, 300);
+              }
+            });
+          });
         });
 
         /* --- Bottom nav active state --- */
