@@ -481,8 +481,6 @@
       </div>
     </footer>
 
-    <button class="scroll-top" id="scroll-top-btn" aria-label="Наверх">↑</button>
-
     <script>
       (function () {
         /* --- Theme toggle --- */
@@ -505,17 +503,6 @@
           root.setAttribute('data-theme', next);
           localStorage.setItem('theme', next);
           applyIcon(next);
-        });
-
-        /* --- Scroll to top --- */
-        var scrollTopBtn = document.getElementById('scroll-top-btn');
-
-        window.addEventListener('scroll', function () {
-          scrollTopBtn.classList.toggle('is-visible', window.scrollY > 400);
-        });
-
-        scrollTopBtn.addEventListener('click', function () {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         /* --- Accordion toggle --- */
