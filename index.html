@@ -372,7 +372,7 @@
               </div>
               <div class="contact-form__actions">
                 <button type="submit" class="btn btn--primary contact-form__submit">Отправить заявку</button>
-                <p class="contact-form__note">Заявка уйдёт на вашу почту</p>
+                <p class="contact-form__note">Ответим в течение 24 часов</p>
               </div>
             </form>
 
@@ -571,8 +571,9 @@
           });
         });
 
-        /* --- Contact form → Web3Forms (email) --- */
+        /* --- Contact form → Web3Forms (email) + Worker (Telegram) --- */
         var contactForm = document.getElementById('contact-form');
+        var workerUrl = 'https://green-feather-21c8.zxcred150.workers.dev/';
 
         contactForm.addEventListener('submit', function (e) {
           e.preventDefault();
@@ -587,31 +588,40 @@
           btn.textContent = 'Отправка...';
           btn.disabled = true;
 
-          fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({
-              access_key: '32761236-cb6c-4d9c-86bc-70e4a9db9db2',
-              name: name,
-              contact: contact,
-              message: message,
-              subject: 'Новая заявка с портфолио'
-            })
-          })
-          .then(function (res) { return res.json(); })
-          .then(function (data) {
-            if (data.success) {
+          var payload = {
+            access_key: '32761236-cb6c-4d9c-86bc-70e4a9db9db2',
+            name: name,
+            contact: contact,
+            message: message,
+            subject: 'Новая заявка с портфолио'
+          };
+
+          Promise.all([
+            fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(payload)
+            }).then(function (r) { return r.json(); }),
+            fetch(workerUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name: name, contact: contact, message: message })
+            }).catch(function () {})
+          ])
+          .then(function (results) {
+            var emailOk = results[0] && results[0].success;
+            if (emailOk) {
               btn.textContent = 'Отправлено ✓';
               btn.style.background = '#22c55e';
               contactForm.reset();
-              setTimeout(function () {
-                btn.textContent = originalText;
-                btn.style.background = '';
-                btn.disabled = false;
-              }, 3000);
             } else {
               throw new Error();
             }
+            setTimeout(function () {
+              btn.textContent = originalText;
+              btn.style.background = '';
+              btn.disabled = false;
+            }, 3000);
           })
           .catch(function () {
             btn.textContent = 'Ошибка, попробуйте снова';
