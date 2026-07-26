@@ -183,7 +183,8 @@ ul {
     padding: 4px 0;
 }
 
-.navbar__link:hover {
+.navbar__link:hover,
+.navbar__link.is-active {
     color: var(--black);
 }
 
@@ -198,7 +199,8 @@ ul {
     transition: var(--transition);
 }
 
-.navbar__link:hover::after {
+.navbar__link:hover::after,
+.navbar__link.is-active::after {
     width: 100%;
 }
 

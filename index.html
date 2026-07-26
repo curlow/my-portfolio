@@ -24,11 +24,11 @@
       <div class="container navbar__inner">
         <a href="#hero" class="navbar__logo">SV</a>
         <ul class="navbar__items" id="nav-menu">
-          <li><a href="#hero" class="navbar__link">Главная</a></li>
-          <li><a href="#pricing" class="navbar__link">Услуги</a></li>
-          <li><a href="#about" class="navbar__link">Обо мне</a></li>
-          <li><a href="#projects" class="navbar__link">Проекты</a></li>
-          <li><a href="#contact" class="navbar__link">Контакт</a></li>
+          <li><a href="#hero" class="navbar__link is-active" data-section="hero">Главная</a></li>
+          <li><a href="#pricing" class="navbar__link" data-section="pricing">Услуги</a></li>
+          <li><a href="#about" class="navbar__link" data-section="about">Обо мне</a></li>
+          <li><a href="#projects" class="navbar__link" data-section="projects">Проекты</a></li>
+          <li><a href="#contact" class="navbar__link" data-section="contact">Контакт</a></li>
         </ul>
         <div class="navbar__actions">
           <button class="theme-toggle" id="theme-btn" aria-label="Переключить тему">
@@ -475,9 +475,10 @@
         /* --- Bottom nav active state --- */
         var bottomNav = document.getElementById('bottom-nav');
         var bottomNavItems = bottomNav.querySelectorAll('.bottom-nav__item');
+        var navLinks = menu.querySelectorAll('.navbar__link');
         var sectionIds = ['hero', 'pricing', 'about', 'projects', 'contact'];
 
-        function updateBottomNav() {
+        function updateActiveNav() {
           var scrollPos = window.scrollY + 200;
           var current = 'hero';
           for (var i = 0; i < sectionIds.length; i++) {
@@ -489,10 +490,13 @@
           bottomNavItems.forEach(function (item) {
             item.classList.toggle('is-active', item.getAttribute('data-section') === current);
           });
+          navLinks.forEach(function (link) {
+            link.classList.toggle('is-active', link.getAttribute('data-section') === current);
+          });
         }
 
-        window.addEventListener('scroll', updateBottomNav);
-        updateBottomNav();
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
 
         bottomNavItems.forEach(function (item) {
           item.addEventListener('click', function (e) {
