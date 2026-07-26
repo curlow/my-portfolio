@@ -498,6 +498,7 @@ body.no-scroll {
     justify-content: center;
     gap: 8px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .projects__filter {
@@ -1248,13 +1249,27 @@ body.no-scroll {
 
     /* Projects */
     .projects__filters {
-        gap: 6px;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 8px;
         margin-bottom: 32px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 4px 0;
+        mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent);
+    }
+
+    .projects__filters::-webkit-scrollbar {
+        display: none;
     }
 
     .projects__filter {
-        padding: 7px 16px;
+        padding: 8px 18px;
         font-size: 0.8rem;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .projects__list {
