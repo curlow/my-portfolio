@@ -1,7 +1,17 @@
 export default {
   async fetch(request, env) {
+    const corsHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    };
+
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { status: 204, headers: corsHeaders });
+    }
+
     if (request.method !== 'POST') {
-      return new Response('Method not allowed', { status: 405 });
+      return new Response('Method not allowed', { status: 405, headers: corsHeaders });
     }
 
     try {
@@ -30,16 +40,16 @@ export default {
       );
 
       if (!tgResponse.ok) {
-        return new Response('Telegram error', { status: 500 });
+        return new Response('Telegram error', { status: 500, headers: corsHeaders });
       }
 
       return new Response(JSON.stringify({ ok: true }), {
         status: 200,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json', ...corsHeaders }
       });
 
     } catch (err) {
-      return new Response('Error: ' + err.message, { status: 500 });
+      return new Response('Error: ' + err.message, { status: 500, headers: corsHeaders });
     }
   }
 };
